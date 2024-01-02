@@ -11,6 +11,7 @@ export const SearchResults = ({ params }) => {
 
   return (
     <>
+      <h1>{decodeURI(keyword)}</h1>
       <ListOfGifs gifs={gifs} />
     </>
   )

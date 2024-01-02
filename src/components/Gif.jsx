@@ -14,7 +14,7 @@ export const Gif = ({ id, image, title }) => {
     >
       <img src={image} alt={title} className='gif__image' />
       <h4 className='gif__title'>{title}</h4>
-      <small className='gif__id'>{id}</small>
+      {/* <small className='gif__id'>{id}</small> */}
     </div>
   )
 }

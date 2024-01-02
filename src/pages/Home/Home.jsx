@@ -1,10 +1,9 @@
-import { Link } from 'wouter'
 import './Home.css'
 import { useState } from 'react';
-const POPULAR_GIFS = ['Matrix', 'The Boys', 'Freddy Faztbear'];
 import { useLocation } from "wouter";
 import { ListOfGifs } from '../../components/ListOfGifs';
 import { useGifs } from '../../hooks/useGifs';
+import TrendingSearches from '../TrendingSearches/TrendingSearches';
 
 
 export const Home = () => {
@@ -39,7 +38,11 @@ export const Home = () => {
 
       <ListOfGifs gifs={gifs} />
 
-      <ul className='home__list'>
+      <TrendingSearches />
+
+
+
+      {/* <ul className='home__list'>
 
         {
           POPULAR_GIFS.map(popular => (
@@ -53,7 +56,7 @@ export const Home = () => {
           ))
         }
 
-      </ul>
+      </ul> */}
 
 
     </div>

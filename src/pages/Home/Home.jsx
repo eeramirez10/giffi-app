@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useLocation } from "wouter";
 import { ListOfGifs } from '../../components/ListOfGifs';
 import { useGifs } from '../../hooks/useGifs';
-import TrendingSearches from '../TrendingSearches/TrendingSearches';
+import TrendingSearches from '../TrendingSearches/index';
 
 
 export const Home = () => {

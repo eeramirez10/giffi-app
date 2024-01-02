@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { getTrendingTerms } from '../../services/getTrendingTerms'
 import Category from '../../components/Category/index'
-import { useNearScreen } from '../../hooks/useNearScreen'
 
 const TrendingSearches = () => {
 
@@ -19,16 +18,6 @@ const TrendingSearches = () => {
   )
 }
 
-export default function LazyTrending() {
- 
-  const { show, ref } = useNearScreen()
+export default TrendingSearches
 
 
-  return (
-    <div ref={ref}>
-      {
-        show ? <TrendingSearches /> : null
-      }
-    </div>
-  )
-}

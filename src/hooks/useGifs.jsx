@@ -15,7 +15,7 @@ export const useGifs = ({ keyword } = {}) => {
 
   useEffect(() => {
     setLoading(true)
-    getGifs({ keyword: lastKeyword, limit:2 })
+    getGifs({ keyword: lastKeyword, limit:5 })
       .then(gifs => {
         setGifs(gifs)
 
@@ -30,11 +30,9 @@ export const useGifs = ({ keyword } = {}) => {
 
     if(page === INITIAL_PAGE) return 
     setLoadingNextPage(true)
-    getGifs({ keyword: lastKeyword, offset: page, limit: 2 })
+    getGifs({ keyword: lastKeyword, offset: page, limit: 5 })
       .then(nextGifs => {
         setGifs(prevGifs => [...prevGifs, ...nextGifs])
-
-
       })
       .finally(() => setLoadingNextPage(false))
   }, [lastKeyword, setGifs, page])

@@ -36,9 +36,15 @@ export const Home = () => {
 
       <h3 className='home__title'>Ultima Busqueda</h3>
 
-      <ListOfGifs gifs={gifs} />
+      <section className='home__content'>
 
-      <TrendingSearches />
+        <ListOfGifs gifs={gifs} />
+
+        <TrendingSearches />
+
+      </section>
+
+
 
 
 

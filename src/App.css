@@ -14,7 +14,7 @@
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px 5px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -41,5 +41,3 @@
   bottom: -5px;
   left: 5px;
 }
-
-

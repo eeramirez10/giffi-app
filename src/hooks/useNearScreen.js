@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { useState, useEffect } from "react"
 
-export const useNearScreen = () => {
+export const useNearScreen = ({ once = true} = {}) => {
   const [show, setShow] = useState(false)
   const ref = useRef()
 
@@ -9,8 +9,10 @@ export const useNearScreen = () => {
     const onChange = (entries, observer) => {
       const el = entries[0]
       if (el.isIntersecting) {
-        observer.disconnect()
-        setShow(true)
+        setShow(true)  
+        once && observer.disconnect()
+      }else {
+        !once && setShow(false)
       }
     }
     const observer = new IntersectionObserver(onChange, {

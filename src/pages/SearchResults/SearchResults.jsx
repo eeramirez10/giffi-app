@@ -2,7 +2,6 @@
 import { ListOfGifs } from '../../components/ListOfGifs'
 import { Spinner } from '../../components/Spinner/Spinner';
 import { useGifs } from '../../hooks/useGifs'
-import PropTypes from 'prop-types';
 import { useNearScreen } from '../../hooks/useNearScreen';
 import { useEffect } from 'react';
 import debounce from 'just-debounce-it'
@@ -29,7 +28,6 @@ export const SearchResults = ({ params }) => {
   const debounceHandleNextPage = useCallback(debounce(() => handleNextPage(), 1000),[]) 
 
   useEffect(() => {
-    console.log(show)
     if (show) debounceHandleNextPage()
 
   }, [show, debounceHandleNextPage])
@@ -50,17 +48,12 @@ export const SearchResults = ({ params }) => {
           </>
       }
       {
-        loadingNextPage && <Spinner />
+        (loadingNextPage || show) && <Spinner />
       }
 
     </>
   )
 }
 
-SearchResults.propTypes = {
-  params: {
-    keyword: PropTypes.string.isRequired
-  }
-}
 
 

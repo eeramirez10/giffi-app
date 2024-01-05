@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { Gif } from "../../components/Gif"
+import Gif  from "../../components/Gif"
 import { useGifs } from "../../hooks/useGifs"
 
 export const Detail = ({ params }) => {

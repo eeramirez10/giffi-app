@@ -1,38 +1,25 @@
-import './Home.css'
-import { useState } from 'react';
-import { useLocation } from "wouter";
 import { ListOfGifs } from '../../components/ListOfGifs';
 import { useGifs } from '../../hooks/useGifs';
 import TrendingSearches from '../TrendingSearches/index';
+import Search  from '../../components/Search/index';
+import { useLocation } from "wouter";
+import './Home.css'
 
 
 export const Home = () => {
-  const [keyword, setKeyword] = useState('')
   const [, setLocation] = useLocation()
+
   const { gifs } = useGifs()
 
-  const handleOnChange = (e) => {
-    setKeyword(e.target.value)
-  }
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault()
-
-    if (!keyword) return
-
+  const handleSubmit = ({ keyword }) => {
     setLocation(`/search/${keyword}`)
-
   }
-
 
   return (
     <div className='home__container'>
       <h3 className='home__title'>Los gifs mas populares</h3>
 
-      <form onSubmit={handleOnSubmit}>
-        <input type="text" value={keyword} onChange={handleOnChange} />
-        <button type='submit'>Buscar</button>
-      </form>
+      <Search onSubmit={handleSubmit} />
 
       <h3 className='home__title'>Ultima Busqueda</h3>
 

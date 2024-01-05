@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import { memo } from 'react';
 import { useLocation } from 'wouter'
 
-export const Gif = ({ id, image, title }) => {
+const Gif = ({ id, image, title }) => {
 
   const [,setLocation] = useLocation()
 
@@ -19,8 +19,4 @@ export const Gif = ({ id, image, title }) => {
   )
 }
 
-Gif.propTypes = {
-  id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
-}
+export default memo(Gif)

@@ -1,0 +1,25 @@
+form{
+  display: flex;
+  align-items: center;
+}
+
+.button-submit {
+  background: #6643b5;
+  border: 0;
+  color: #ffff;
+  font: inherit;
+  height: 30px;
+  padding: 0 15px
+}
+
+.button-submit:hover {
+  background: #59438c;
+  transition: ease .3s;
+}
+
+input {
+  background-color: #ffff;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+}

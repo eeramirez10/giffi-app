@@ -1,0 +1,45 @@
+#root {
+
+}
+
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gifts__container{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 30px 0px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  
+  
+}
+
+.gif__container{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  
+} 
+
+.gif__image{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gif__title{
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+}

@@ -1,16 +1,30 @@
-/* eslint-disable react/prop-types */
-
-import Gif  from "../../components/Gif"
-import { useGifs } from "../../hooks/useGifs"
+/* eslint-disable react/prop-types */import { Redirect } from "wouter"
+import Gif from "../../components/Gif"
+// import { useGifs } from "../../hooks/useGifs"
+import { useSingleGif } from "../../hooks/useSingleGif"
 
 export const Detail = ({ params }) => {
 
-  const { gifs } = useGifs()
+  const { gif, isError } = useSingleGif({ id: params.id })
 
-  const gif = gifs.find( gif => gif.id === params.id)
-
+  if(isError) return <Redirect to="/404" />
 
   return (
-    <Gif id={gif.id} image = {gif.image} title = {gif.title}/>
+    <>
+      {
+        gif &&
+        <>
+          <h3>{gif.title}</h3>
+          <Gif
+            id={gif.id}
+            image={gif.image}
+            title={gif.title}
+          />
+
+        </>
+      }
+
+    </>
+
   )
 }

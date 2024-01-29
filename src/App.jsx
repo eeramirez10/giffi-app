@@ -4,6 +4,7 @@ import { Route } from "wouter";
 import { Home } from './pages/Home/Home';
 import { SearchResults } from './pages/SearchResults/SearchResults';
 import { Detail } from './pages/Detail/Detail';
+import { NotFound } from './pages/NotFound/NotFound';
 function App() {
 
   return (
@@ -27,6 +28,8 @@ function App() {
           path='/detail/:id'
           component={Detail}
         />
+
+        <Route path='/404'  component={NotFound}/>
 
       </section>
     </div>

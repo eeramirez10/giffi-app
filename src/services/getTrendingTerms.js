@@ -1,4 +1,4 @@
-import { fromApiResponseToGifs } from "../helpers/fromApiResponseToGifs"
+import { fromApiResponseToGif } from "../helpers/fromApiResponseToGifs"
 import { getEnvVariables } from "../helpers/getEnvVariables"
 
 const { VITE_GIPHY_APY_KEY, VITE_GIPHI_API_URL } = getEnvVariables()
@@ -10,7 +10,7 @@ export const getTrendingTerms = ({limit = 25} = {}) => {
 
   return fetch(apiURL)
     .then(resp => resp.json())
-    .then(({ data }) => fromApiResponseToGifs(data))
+    .then(({ data }) => data.map( trend => fromApiResponseToGif(trend) ) )
 
 
 }
